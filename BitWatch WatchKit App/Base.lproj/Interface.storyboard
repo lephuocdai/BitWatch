@@ -8,13 +8,37 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BitWatch_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="136" height="31.5" alignment="left" text="Label" id="3oU-DO-oeO"/>
-                        <button width="1" alignment="left" title="Button" id="GUW-ZM-gvx"/>
+                        <label width="136" height="36.5" alignment="left" text="$0.00" id="6GE-qK-emT">
+                            <fontDescription key="font" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
+                        </label>
+                        <label width="135.5" height="31.5" alignment="left" verticalAlignment="bottom" text="Last Updated" textAlignment="center" id="g72-5G-seb">
+                            <fontDescription key="font" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                        </label>
+                        <group width="1" alignment="left" id="tat-Qv-J8p">
+                            <items>
+                                <imageView width="69" alignment="center" verticalAlignment="center" id="2JQ-u7-mDL"/>
+                                <label width="32" height="32" alignment="center" verticalAlignment="center" text="1BTC" textAlignment="center" id="15U-5W-I5H">
+                                    <fontDescription key="font" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                </label>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Refresh" id="TG7-bg-uw7">
+                            <fontDescription key="font" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                            <connections>
+                                <action selector="refreshTapped" destination="AgC-eL-Hgc" id="nMl-Br-6Tw"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="image" destination="2JQ-u7-mDL" id="fgN-80-ROe"/>
+                        <outlet property="lastUpdatedLabel" destination="g72-5G-seb" id="RAy-hi-946"/>
+                        <outlet property="priceLabel" destination="6GE-qK-emT" id="BVn-8o-kdb"/>
+                    </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="576" y="460"/>
         </scene>
     </scenes>
 </document>
