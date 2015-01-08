@@ -15,6 +15,7 @@
 		55BFE3031A5E42E200196DCB /* BitWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 55BFE2EB1A5E42E200196DCB /* BitWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		55BFE30A1A5E440400196DCB /* BitWatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B876BB31A1CA05900A76FAF /* BitWatchKit.framework */; };
 		55BFE30B1A5E440900196DCB /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA883B61A1CB87300C53ECE /* WatchKit.framework */; };
+		55BFE30D1A5E58E300196DCB /* WeatherTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BFE30C1A5E58E300196DCB /* WeatherTracker.swift */; };
 		7B876B6A1A1C9F2D00A76FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B876B691A1C9F2D00A76FAF /* AppDelegate.swift */; };
 		7B876B6F1A1C9F2D00A76FAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B876B6D1A1C9F2D00A76FAF /* Main.storyboard */; };
 		7B876B711A1C9F2D00A76FAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B876B701A1C9F2D00A76FAF /* Images.xcassets */; };
@@ -84,6 +85,7 @@
 		55BFE2FB1A5E42E200196DCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55BFE2FD1A5E42E200196DCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		55BFE2FF1A5E42E200196DCB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		55BFE30C1A5E58E300196DCB /* WeatherTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTracker.swift; sourceTree = "<group>"; };
 		7B876B641A1C9F2D00A76FAF /* BitWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B876B681A1C9F2D00A76FAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B876B691A1C9F2D00A76FAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				7B876BB71A1CA05900A76FAF /* BitWatchKit.h */,
 				7B876BD21A1CA0ED00A76FAF /* Tracker.swift */,
+				55BFE30C1A5E58E300196DCB /* WeatherTracker.swift */,
 				7B876BB51A1CA05900A76FAF /* Supporting Files */,
 			);
 			path = BitWatchKit;
@@ -430,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B876BD31A1CA0ED00A76FAF /* Tracker.swift in Sources */,
+				55BFE30D1A5E58E300196DCB /* WeatherTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

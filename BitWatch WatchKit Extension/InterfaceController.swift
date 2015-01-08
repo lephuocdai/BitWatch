@@ -13,6 +13,7 @@ import BitWatchKit
 
 class InterfaceController: WKInterfaceController {
     let tracker = Tracker()
+    let weatherTracker = WeatherTracker()
     var updating = false
     
     @IBOutlet var priceLabel: WKInterfaceLabel!
@@ -42,20 +43,30 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     private func updatePrice(price: NSNumber) {
-        priceLabel.setText(Tracker.priceFormatter.stringFromNumber(price));
+        var temp = Double(price)
+        temp -= 273.15
+        priceLabel.setText(WeatherTracker.tempFormatter.stringFromNumber(NSNumber(double: temp)))
     }
     private func update() {
         if !updating {
             updating = true
             let originalPrice = tracker.cachedPrice()
-            tracker.requestPrice { (price, error) -> () in
+            weatherTracker.requestTemp { (temp, error) -> () in
                 if error == nil {
-                    self.updatePrice(price!)
+                    self.updatePrice(temp!)
                     self.updateDate(NSDate())
-                    self.updateImage(originalPrice, newPrice: price!)
+                    self.updateImage(originalPrice, newPrice: temp!)
                 }
                 self.updating = false
             }
+//            tracker.requestPrice { (price, error) -> () in
+//                if error == nil {
+//                    self.updatePrice(price!)
+//                    self.updateDate(NSDate())
+//                    self.updateImage(originalPrice, newPrice: price!)
+//                }
+//                self.updating = false
+//            }
         }
     }
     private func updateDate(date: NSDate) {
@@ -65,11 +76,6 @@ class InterfaceController: WKInterfaceController {
         if originalPrice.isEqualToNumber(newPrice) {
             image.setHidden(true)
         } else {
-//            if newPrice.doubleValue > originalPrice.doubleValue {
-//                image.setImageNamed("Up")
-//            } else {
-//                image.setImageNamed("Down")
-//            }
             image.setImageNamed((newPrice.doubleValue > originalPrice.doubleValue) ? "Up" : "Down")
             image.setHidden(false)
         }
